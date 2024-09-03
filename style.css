@@ -1,0 +1,140 @@
+:root {
+    --bgr-color: #EEEEEE;
+    --nav-bgr-color: #76ABAE;
+    --font-size: clamp(0.7rem, 0.3043rem + 3.4783vw, 1.1rem);
+    --txt-color: #222831;
+    --nav-h-l: 7vh;
+    --nav-h-landscape: 13vh;
+}
+
+*{
+    font-size: var(--font-size);
+    font-family: "Lato", sans-serif;
+    font-weight: 600;
+    color: var(--txt-color);
+    margin: 0;
+}
+
+body {
+    background-color: var(--bgr-color);
+}
+
+.nav-container{
+    height: var(--nav-h-l);
+    padding: 0 2vw;
+    background-color: var(--nav-bgr-color);
+    box-shadow:  -3px -3px 80px var(--nav-bgr-color);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: var(--nav-h-l);
+}
+
+a {
+    text-decoration: none;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 3vw;
+}
+
+.list *{
+    transition: all 0.7s;
+}
+
+
+.list>li>a:hover{
+    opacity: 0.82;
+    color: var(--bgr-color);
+}
+
+.social-container {
+    display: inline-block;
+}
+
+.social-container > a > img{
+    padding: 0 0.7vw;
+}
+
+
+
+
+.social-container > a > img, .menu-img {
+    height: 3vh;
+}
+
+.menu-img{
+    transition: all 0.5s;
+}
+
+.menu-img.rotate{
+    transform: rotate(90deg);
+}
+
+
+@media screen and (min-width: 1121px){
+    .menu-img{
+        display:none;
+    }
+}
+
+@media (orientation: landscape) and (max-width:900px){
+    .nav-container, .logo-img{
+        height: var(--nav-h-landscape);
+    }
+
+    .menu-img {
+        height: 7vh;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .social-container{
+        display: none;
+    }
+
+    .menu-img{
+        display: block;
+    }
+
+    .list {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        position:fixed;
+        top:8vh;
+        left:100%;
+        width:100%;
+        height: 100vh;
+        background-color: var(--nav-bgr-color);
+        transition: 0.5s ease-in;
+    }
+
+    .list > li {
+        padding-top: 1vh;
+    }
+
+    .active{
+        left: 0;
+        transition: 0.5s ease-in;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1280px){
+
+    .list {
+        top: 60px;
+        padding: 2vw;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
