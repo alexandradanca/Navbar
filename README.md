@@ -2,7 +2,7 @@
   <a href="https://alexandradanca.github.io/Navbar/" target="_blank">Navbar section</a>
 </h2>
 
-<p>This is a navbar section for a web page. </br>It was created during front-end learning journey</p>
+<p>A clean and responsive navigation bar to enhance website usability and accessibility. </br>It was created during front-end learning journey</p>
 
 ## Built With
 - HTML
